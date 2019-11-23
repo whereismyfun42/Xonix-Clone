@@ -107,3 +107,6 @@ MonoBehaviour:
   cellStatus: 0
   ActivatedCell: {fileID: 2780109539075722237, guid: 5489c0a74e1b5d8458125fdd7869a708,
     type: 3}
+  distance: 0.1
+  highlightMaterial: {fileID: 2100000, guid: 1285870e02f3a28408b63bf7254c546c, type: 2}
+  standartMaterial: {fileID: 2100000, guid: 2b5c5361102ab93409b661a44d2924b6, type: 2}

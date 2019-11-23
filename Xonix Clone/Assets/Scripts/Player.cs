@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public Rigidbody rb;
     public float distanceToGround = 0.5f;
     public float movementSpeed = 10f;
+    public int moveCounter = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -18,27 +19,34 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D)) && moveCounter>0)
+        {
+            DecreaseCounter();
+        }
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && moveCounter > 0)
         {
-            transform.position += transform.forward * Time.deltaTime * movementSpeed;
+            rb.velocity = Vector3.zero;
+            rb.AddForce(Vector3.forward * movementSpeed);
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) && moveCounter > 0)
         {
-            transform.position += (-transform.right) * Time.deltaTime * movementSpeed;
+            rb.velocity = Vector3.zero;
+            rb.AddForce((-Vector3.right) * movementSpeed);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) && moveCounter > 0)
         {
-            transform.position += transform.right * Time.deltaTime * movementSpeed;
+            rb.velocity = Vector3.zero;
+            rb.AddForce(Vector3.right * movementSpeed);
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) && moveCounter > 0)
         {
-            transform.position += (-transform.forward) * Time.deltaTime * movementSpeed;
+            rb.velocity = Vector3.zero;
+            rb.AddForce((-Vector3.forward) * movementSpeed);
         }
 
         RaycastHit hit;
@@ -51,5 +59,17 @@ public class Player : MonoBehaviour
         }        
     }
 
-    
+    void DecreaseCounter()
+    {
+        moveCounter--;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "bounds")
+        {
+            moveCounter = 2;
+        }
+    }
+
 }

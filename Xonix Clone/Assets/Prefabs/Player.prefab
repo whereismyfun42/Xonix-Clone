@@ -96,7 +96,8 @@ MonoBehaviour:
   boundsMaterial: {fileID: 2100000, guid: 2ba60046eb7d8a246a727687872a90cf, type: 2}
   rb: {fileID: -2417118132619444793}
   distanceToGround: 0.5
-  movementSpeed: 10
+  movementSpeed: 2000
+  moveCounter: 2
 --- !u!135 &-6189758398333438066
 SphereCollider:
   m_ObjectHideFlags: 0

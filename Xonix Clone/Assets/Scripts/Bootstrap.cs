@@ -27,7 +27,7 @@ public class Bootstrap : MonoBehaviour
         SpawnGrid();
         Camera.main.transform.position = new Vector3(24, 46, 24);
         //EnemyBounds = new Vector3(gridX, 0, gridZ);
-        Instantiate(Player, new Vector3(25, 1, 1), Quaternion.identity);
+        Instantiate(Player, new Vector3(25, 1, 0), Quaternion.identity);
         Instantiate(VerticalBounds, new Vector3(-0.92f, 0.4f, 24.4f), Quaternion.identity);
         Instantiate(VerticalBounds, new Vector3(49.8f, 0.4f, 24.4f), Quaternion.identity);
         Instantiate(HorizontalBounds, new Vector3(25.1f, 0.4f, 49.9f), Quaternion.Euler(0,90,0));

@@ -63,8 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\_grid.cs" />
     <Compile Include="Assets\Scripts\Bootstrap.cs" />
+    <Compile Include="Assets\Scripts\Detector.cs" />
     <Compile Include="Assets\Scripts\GridCell.cs" />
+    <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/Xonix Clone/Xonix-Clone/Xonix Clone/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
